@@ -9,20 +9,8 @@ colors = {
     'text': '#7FDBFF'
 }
 
-df1 = pd.read_csv("data.csv")
-list = pd.unique(df1["date"])
+df = pd.read_csv("data.csv")
 
-sumlst = []
-datelst = []
-
-for i in list:
-    s = df1.loc[df1['date'] == i, 'sales'].sum()
-    sumlst = sumlst + [s]
-    datelst = datelst + [i]
-
-
-df = pd.DataFrame({"date": datelst,
-                    "sales": sumlst})
 
 fig = px.line(df, x="date", y="sales")
 fig.add_vline(x="2021-01-15", line_dash="dash", line_color="yellow", 
