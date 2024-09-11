@@ -17,5 +17,5 @@ def test_graph_is_present(dash_duo):
 # Test for radio items presence
 def test_radio_items_is_present(dash_duo):
     dash_duo.start_server(app, timeout=60)
-    radio = dash_duo.find_element("region-selector")
-    assert radio is not None
+    radio = dash_duo.find_elements("region-selector")
+    assert radio is not None 
